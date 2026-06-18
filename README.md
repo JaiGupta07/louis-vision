@@ -1,16 +1,44 @@
-# React + Vite
+# Louis Vision
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A voice-first navigation aid for blind and low-vision users.** Open it on your phone, tap the screen, and it describes what's in front of you, out loud.
 
-Currently, two official plugins are available:
+🔗 **Live demo:** https://louis-vision.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What it does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Louis Vision uses your phone's camera and a vision-language model to describe a user's surroundings in real time. Tap anywhere on the screen → it captures the scene → it speaks a short, useful description aloud ("A doorway about two meters ahead, a chair to your left"). The interface is built to be used without looking at it: the entire screen is one large tap target, every action gives audio and haptic feedback, and spoken output is kept short for real-time navigation.
 
-## Expanding the ESLint configuration
+## Why
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Louis Vision is the software successor to [Project Louis](http://wiredindia.in/louis.html), an assistive navigation cane I co-founded — which raised ~$15,000 and put 26+ donated units in the hands of blind users at an institute for the blind in Delhi. That project taught me the problem firsthand through user research. This one rebuilds the idea for 2026: instead of sensors on a cane, it puts a vision model in the user's pocket.
+
+## How it works
+
+- **Frontend:** React + Vite. Camera access via `getUserMedia`; speech via the browser's Web Speech API.
+- **Backend:** a serverless function holds the API key and calls the vision-language model — the key never touches the frontend.
+- **Hosting:** Vercel.
+
+## Run it locally
+
+```bash
+npm install
+# add your Anthropic API key to a .env file:
+# ANTHROPIC_API_KEY=your_key_here
+npm run dev
+```
+
+Then open the local URL on your phone (or a laptop with a camera) and allow camera access.
+
+## Roadmap
+
+- [x] MVP: tap to describe the scene aloud
+- [ ] Read mode — read signs, labels, and text on demand
+- [ ] Find mode — "where is my water bottle?"
+- [ ] Hazard mode — continuous capture with obstacle/step warnings
+- [ ] Bilingual output (English + Hindi)
+
+## Status
+
+Built as a working MVP. Actively improving. Feedback welcome.
