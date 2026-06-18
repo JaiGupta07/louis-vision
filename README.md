@@ -12,7 +12,7 @@ Louis Vision uses your phone's camera and a vision-language model to describe a 
 
 ## Why
 
-Louis Vision is the software successor to [Project Louis](http://wiredindia.in/louis.html), an assistive navigation cane I co-founded — which raised ~$15,000 and put 26+ donated units in the hands of blind users at an institute for the blind in Delhi. That project taught me the problem firsthand through user research. This one rebuilds the idea for 2026: instead of sensors on a cane, it puts a vision model in the user's pocket.
+Louis Vision is the software successor to [Project Louis](https://wiredindia.org/louis.html), an assistive navigation cane I co-founded — which raised ~$15,000 and put 26+ donated units in the hands of blind users at an institute for the blind in Delhi. That project taught me the problem firsthand through user research. This one rebuilds the idea for 2026: instead of sensors on a cane, it puts a vision model in the user's pocket.
 
 ## How it works
 
