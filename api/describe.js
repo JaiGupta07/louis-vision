@@ -41,6 +41,6 @@ export default async function handler(req, res) {
     res.status(200).json({ description })
   } catch (err) {
     console.error(`Claude API error ${err.status}: ${err.message}`)
-    res.status(500).json({ error: 'Failed to get description', detail: err.message, status: err.status })
+    res.status(500).json({ error: 'Failed to get description' })
   }
 }
